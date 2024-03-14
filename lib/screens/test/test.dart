@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:openex_mobile/blocs/language/language_cubit.dart';
+import 'package:openex_mobile/common/constants.dart';
 import 'package:openex_mobile/config/app_router.dart';
 import 'package:openex_mobile/resources/colors.dart';
 import 'package:openex_mobile/resources/text_style.dart';
-import 'package:openex_mobile/utils/log/log.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TestScreen extends StatefulWidget {
   static const route = AppRoute.LOG_IN;
@@ -15,6 +18,10 @@ class TestScreen extends StatefulWidget {
 class _TestScreenState extends State<TestScreen> {
   @override
   Widget build(BuildContext context) {
+    void changeLanguage(String languageCode) {
+      context.read<LanguageCubit>().changeLanguage(languageCode);
+    }
+
     return SafeArea(
         child: Scaffold(
             appBar: AppBar(
@@ -25,13 +32,16 @@ class _TestScreenState extends State<TestScreen> {
             backgroundColor: AppColors.white,
             body: Center(
               child: Padding(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
-                    Text("Test"),
+                    Text(AppLocalizations.of(context)!.helloWorld),
                     ElevatedButton(
-                        onPressed: () => {Log.d("Log debug")},
-                        child: Text("Click"))
+                        onPressed: () => {changeLanguage(LanguageCode.EN)},
+                        child: const Text("Change app language to English")),
+                    ElevatedButton(
+                        onPressed: () => {changeLanguage(LanguageCode.JA)},
+                        child: const Text("Change app language to Japan"))
                   ],
                 ),
               ),
