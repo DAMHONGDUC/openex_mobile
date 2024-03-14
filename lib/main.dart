@@ -5,7 +5,7 @@ import 'package:openex_mobile/blocs/language/language_cubit.dart';
 import 'package:openex_mobile/common/constants.dart';
 import 'package:openex_mobile/config/app_router.dart';
 import 'package:openex_mobile/screens/auth/login_screen.dart';
-import 'package:openex_mobile/screens/test/test.dart';
+import 'package:openex_mobile/screens/play_around/play_around.dart';
 import 'package:openex_mobile/themes/themes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -32,9 +32,9 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: AppConstant.APP_NAME,
             theme: lightTheme,
-            initialRoute: AppRoute.TEST,
+            initialRoute: AppRoute.PLAY_AROUND,
             routes: {
-              AppRoute.TEST: (context) => const TestScreen(),
+              AppRoute.PLAY_AROUND: (context) => const PlayAroundScreen(),
               AppRoute.LOG_IN: (context) => const LoginScreen(),
             },
           ),

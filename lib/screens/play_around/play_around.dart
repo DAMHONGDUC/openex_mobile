@@ -7,15 +7,15 @@ import 'package:openex_mobile/resources/colors.dart';
 import 'package:openex_mobile/resources/text_style.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class TestScreen extends StatefulWidget {
+class PlayAroundScreen extends StatefulWidget {
   static const route = AppRoute.LOG_IN;
-  const TestScreen({super.key});
+  const PlayAroundScreen({super.key});
 
   @override
-  State<TestScreen> createState() => _TestScreenState();
+  State<PlayAroundScreen> createState() => _PlayAroundScreenState();
 }
 
-class _TestScreenState extends State<TestScreen> {
+class _PlayAroundScreenState extends State<PlayAroundScreen> {
   @override
   Widget build(BuildContext context) {
     void changeLanguage(String languageCode) {
