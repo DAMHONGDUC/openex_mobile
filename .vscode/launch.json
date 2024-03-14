@@ -2,11 +2,6 @@
   "version": "1.0.0",
   "configurations": [
     {
-      "name": "openex-mobile",
-      "request": "launch",
-      "type": "dart"
-    },
-    {
       "name": "Android",
       "request": "launch",
       "type": "dart",
