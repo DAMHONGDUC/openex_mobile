@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:openex_mobile/config/app_router.dart';
 import 'package:openex_mobile/screens/auth/login_screen.dart';
+import 'package:openex_mobile/screens/test/test.dart';
 import 'package:openex_mobile/themes/themes.dart';
 
 void main() {
@@ -21,8 +22,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Open-ex app',
         theme: lightTheme,
-        initialRoute: AppRoute.LOG_IN,
+        initialRoute: AppRoute.TEST,
         routes: {
+          AppRoute.TEST: (context) => const TestScreen(),
           AppRoute.LOG_IN: (context) => const LoginScreen(),
         },
       ),

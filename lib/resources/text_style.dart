@@ -9,43 +9,43 @@ class AppTextStyle {
       fontFamily: 'OpenSans',
       fontSize: 10.sp,
       fontWeight: FontWeight.w400,
-      color: AppColors.text_black);
+      color: AppColors.black);
 
   static TextStyle small() => TextStyle(
       fontFamily: 'OpenSans',
       fontSize: 12.sp,
       fontWeight: FontWeight.w400,
-      color: AppColors.text_black);
+      color: AppColors.black);
 
   static TextStyle base() => TextStyle(
       fontFamily: 'OpenSans',
       fontSize: 14.sp,
       fontWeight: FontWeight.w400,
-      color: AppColors.text_black);
+      color: AppColors.black);
 
   static TextStyle medium() => TextStyle(
       fontFamily: 'OpenSans',
       fontSize: 16.sp,
       fontWeight: FontWeight.w400,
-      color: AppColors.text_black);
+      color: AppColors.black);
 
   static TextStyle large() => TextStyle(
       fontFamily: 'OpenSans',
       fontSize: 18.sp,
       fontWeight: FontWeight.w400,
-      color: AppColors.text_black);
+      color: AppColors.black);
 
   static TextStyle xLarge() => TextStyle(
       fontFamily: 'OpenSans',
       fontSize: 20.sp,
       fontWeight: FontWeight.w400,
-      color: AppColors.text_black);
+      color: AppColors.black);
 
   static TextStyle xxLarge() => TextStyle(
       fontFamily: 'OpenSans',
       fontSize: 24.sp,
       fontWeight: FontWeight.w400,
-      color: AppColors.text_black);
+      color: AppColors.black);
 }
 
 extension TextStyleExt on TextStyle {
