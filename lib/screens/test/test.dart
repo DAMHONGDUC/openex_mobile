@@ -19,12 +19,8 @@ class _TestScreenState extends State<TestScreen> {
         child: Scaffold(
             appBar: AppBar(
               backgroundColor: AppColors.white,
-              title: Text(
-                "Test Screen",
-                style: AppTextStyle.small()
-                    .withColor(AppColors.black)
-                    .copyWith(fontSize: 20),
-              ),
+              title: Text("Test Screen32222",
+                  style: AppTextStyle.large().withColor(AppColors.black)),
             ),
             backgroundColor: AppColors.white,
             body: Center(

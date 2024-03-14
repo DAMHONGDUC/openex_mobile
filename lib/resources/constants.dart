@@ -1,3 +1,3 @@
 class AppConstant {
-  static const String appName = 'Open-ex app';
+  static const String appName = 'openex mobile';
 }
