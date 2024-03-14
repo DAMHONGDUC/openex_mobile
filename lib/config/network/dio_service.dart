@@ -11,12 +11,18 @@ class DioService {
     } catch (err) {}
   }
 
-  static Future<dynamic> post(String url) async {
+  static Future<dynamic> post(String url, Object? request) async {
     try {
       Dio dioClient = await DioClient.getDio();
-      final response = await dioClient.post(url);
+      final response = await dioClient.post(url, data: request);
 
       return response;
     } catch (err) {}
   }
+
+  static Future<dynamic> put(String url) async {}
+
+  static Future<dynamic> delete(String url) async {}
+
+  static Future<dynamic> uploadFiles(String url) async {}
 }
