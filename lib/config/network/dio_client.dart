@@ -3,11 +3,10 @@ import 'package:openex_mobile/config/end_points.dart';
 import 'package:openex_mobile/config/network/interceptors/authorization_interceptor.dart';
 import 'package:openex_mobile/config/network/interceptors/logger_interceptor.dart';
 
-class DioProvider {
-  DioProvider._();
+class DioClient {
+  DioClient._();
 
-  static Dio? _primaryDio;
-  static Dio? _authDio;
+  static Dio? _dio;
 
   static final Map<String, dynamic> _headers = {
     'Accept': 'application/json',
@@ -15,12 +14,12 @@ class DioProvider {
   };
 
   static Future<Dio> getDio([Dio? dio]) async {
-    if (_primaryDio != null) {
-      return _primaryDio!;
+    if (_dio != null) {
+      return _dio!;
     }
 
-    _primaryDio = await _getDio(dio: dio);
-    return _primaryDio!;
+    _dio = await _getDio(dio: dio);
+    return _dio!;
   }
 
   static Future<Dio> _getDio({Dio? dio}) async {
