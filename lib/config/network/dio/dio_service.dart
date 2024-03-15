@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:openex_mobile/config/network/dio_client.dart';
+import 'package:openex_mobile/config/network/dio/dio_client.dart';
 
 class DioService {
   static Future<dynamic> get(String url) async {
@@ -11,13 +11,15 @@ class DioService {
     } catch (err) {}
   }
 
-  static Future<dynamic> post(String url, Object? request) async {
+  static Future<Response<T>> post<T>(String url, Object? request) async {
     try {
       Dio dioClient = await DioClient.getDio();
-      final response = await dioClient.post(url, data: request);
+      final Response<T> response = await dioClient.post(url, data: request);
 
       return response;
-    } catch (err) {}
+    } catch (err) {
+      rethrow;
+    }
   }
 
   static Future<dynamic> put(String url) async {}

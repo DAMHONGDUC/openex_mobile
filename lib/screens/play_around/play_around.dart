@@ -32,7 +32,7 @@ class _PlayAroundScreenState extends State<PlayAroundScreen> {
       final resp =
           await authRepository.login(Endpoints.LOGIN, "kminchelle", "0lelplR");
 
-      Log.d("testCallAPI: $resp");
+      Log.d("testCallAPI: ${resp?.email}");
     }
 
     return SafeArea(
