@@ -7,7 +7,7 @@ import 'package:openex_mobile/core/resources/app_colors.dart';
 import 'package:openex_mobile/core/resources/app_text_style.dart';
 import 'package:openex_mobile/data/repository/auth_repository.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:openex_mobile/features/play_around/bloc/language_cubit.dart';
+import 'package:openex_mobile/features/app/bloc/app_cubit.dart';
 import 'package:openex_mobile/utils/log/log.dart';
 
 class PlayAroundScreen extends StatefulWidget {
@@ -22,7 +22,7 @@ class _PlayAroundScreenState extends State<PlayAroundScreen> {
   @override
   Widget build(BuildContext context) {
     void changeLanguage(String languageCode) {
-      context.read<LanguageCubit>().changeLanguage(languageCode);
+      context.read<AppCubit>().changeLanguage(languageCode);
     }
 
     void testCallAPI() async {
