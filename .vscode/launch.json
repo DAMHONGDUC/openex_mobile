@@ -18,7 +18,14 @@
       "request": "launch",
       "type": "dart",
       "deviceId": "A3ED0FC6-B90D-477E-BBA5-659D9C3879FC"
-    }
+    },
+     {
+      "name": "iPhone-release",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "59A29C39-0E26-49F0-A497-1E9D9A9478F1",
+      "flutterMode": "release"
+    },
   ],
   "compounds": [
     {

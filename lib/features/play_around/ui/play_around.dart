@@ -21,6 +21,8 @@ class PlayAroundScreen extends StatefulWidget {
 }
 
 class _PlayAroundScreenState extends State<PlayAroundScreen> {
+  String userEmail = "";
+
   @override
   Widget build(BuildContext context) {
     void changeLanguage(String languageCode) {
@@ -32,9 +34,12 @@ class _PlayAroundScreenState extends State<PlayAroundScreen> {
       final AuthRepository authRepository = AuthRepository();
 
       final resp =
-          await authRepository.login(Endpoints.LOGIN, "kminchelle", "0lelplR");
+          // await authRepository.login(Endpoints.LOGIN, "kminchelle", "0lelplR");
+          await authRepository.login(Endpoints.LOGIN, "kminchellee", "0lelplR");
 
-      Log.d("testCallAPI: ${resp?.email}");
+      setState(() {
+        userEmail = resp?.email ?? 'null';
+      });
     }
 
     void showMotionToast() {
@@ -67,7 +72,8 @@ class _PlayAroundScreenState extends State<PlayAroundScreen> {
                         child: const Text("Test Call API")),
                     ElevatedButton(
                         onPressed: () => {showMotionToast()},
-                        child: const Text("Show Toast"))
+                        child: const Text("Show Toast")),
+                    Text("User Email:$userEmail")
                   ],
                 ),
               ),

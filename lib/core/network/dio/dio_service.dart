@@ -1,42 +1,34 @@
 import 'package:dio/dio.dart';
+import 'package:openex_mobile/core/common/app_enums.dart';
 import 'package:openex_mobile/core/network/dio/dio_client.dart';
-import 'package:openex_mobile/core/network/dio/dio_exception.dart';
-import 'package:openex_mobile/utils/log/log.dart';
-import 'package:flutter/foundation.dart';
+import 'package:openex_mobile/utils/toast_manager/toast_manager.dart';
 
 class DioService {
-  static Future<Response<T>> get<T>(String url) async {
+  static Future<Response?> get(String url) async {
     try {
       Dio dioClient = await DioClient.getDio();
-      final Response<T> response = await dioClient.get<T>(url);
+      final Response response = await dioClient.get(url);
 
       return response;
-    } on DioException catch (err) {
-      final errorMessage = DioExceptionCustom.fromDioError(err).toString();
-      throw errorMessage;
+    } on DioException {
+      // already handle in error_interceptor
     } catch (e) {
-      if (kDebugMode) {
-        Log.e("GET: $url", e.toString());
-      }
-      throw e.toString();
+      ToastManager.showNotificationToast(ToastType.Error, e.toString());
     }
+    return null;
   }
 
-  static Future<Response<T>> post<T>(String url, Object? dataRequest) async {
+  static Future<Response?> post(String url, Object? dataRequest) async {
     try {
       Dio dioClient = await DioClient.getDio();
-      final Response<T> response =
-          await dioClient.post<T>(url, data: dataRequest);
+      final Response response = await dioClient.post(url, data: dataRequest);
 
       return response;
-    } on DioException catch (err) {
-      final errorMessage = DioExceptionCustom.fromDioError(err).toString();
-      throw errorMessage;
+    } on DioException {
+      // already handle in error_interceptor
     } catch (e) {
-      if (kDebugMode) {
-        Log.e("POST: $url", e.toString());
-      }
-      throw e.toString();
+      ToastManager.showNotificationToast(ToastType.Error, e.toString());
     }
+    return null;
   }
 }

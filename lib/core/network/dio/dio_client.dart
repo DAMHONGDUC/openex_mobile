@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:openex_mobile/core/network/end_points.dart';
 import 'package:openex_mobile/core/network/interceptors/authorization_interceptor.dart';
+import 'package:openex_mobile/core/network/interceptors/error_interceptor.dart';
 import 'package:openex_mobile/core/network/interceptors/logger_interceptor.dart';
 
 class DioClient {
@@ -32,8 +33,8 @@ class DioClient {
         receiveTimeout: const Duration(seconds: Endpoints.RECEIVE_TIMEOUT),
         responseType: ResponseType.json);
 
-    resultDio.interceptors
-        .addAll([AuthorizationInterceptor(), LoggerInterceptor()]);
+    resultDio.interceptors.addAll(
+        [AuthorizationInterceptor(), LoggerInterceptor(), ErrorInterceptor()]);
 
     return resultDio;
   }

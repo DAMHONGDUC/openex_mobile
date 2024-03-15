@@ -9,9 +9,9 @@ class AuthRepository {
       "username": username,
       "password": password
     };
-    final response = await DioService.post<String>(url, requestData);
+    final response = await DioService.post(url, requestData);
 
-    if (response.statusCode == 200) {
+    if (response?.statusCode == 200) {
       Map<String, dynamic> data = jsonDecode(response.toString());
 
       return User.fromJson(data);
