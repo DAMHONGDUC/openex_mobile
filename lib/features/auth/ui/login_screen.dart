@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:openex_mobile/config/app_router.dart';
-import 'package:openex_mobile/resources/colors.dart';
-import 'package:openex_mobile/resources/text_style.dart';
-import 'package:openex_mobile/utils/log/log.dart';
+import 'package:openex_mobile/core/app_router.dart';
+import 'package:openex_mobile/core/resources/app_colors.dart';
+import 'package:openex_mobile/core/resources/app_text_style.dart';
 
 class LoginScreen extends StatefulWidget {
   static const route = AppRoute.LOG_IN;
@@ -27,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             backgroundColor: AppColors.white,
-            body: Center(
+            body: const Center(
               child: Padding(
                 padding: EdgeInsets.all(20),
                 child: Column(

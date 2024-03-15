@@ -1,4 +1,4 @@
-class AppConstant {
+class AppConstants {
   static const String APP_NAME = 'openex mobile';
 }
 

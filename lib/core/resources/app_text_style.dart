@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:openex_mobile/resources/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:openex_mobile/core/resources/app_colors.dart';
 
 class AppTextStyle {
   AppTextStyle._();

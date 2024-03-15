@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:openex_mobile/common/constants.dart';
+import 'package:openex_mobile/core/common/app_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 part 'language_state.dart';

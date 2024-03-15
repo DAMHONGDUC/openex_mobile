@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:openex_mobile/config/end_points.dart';
+import 'package:openex_mobile/core/network/end_points.dart';
 
 class AuthorizationInterceptor extends Interceptor {
   @override

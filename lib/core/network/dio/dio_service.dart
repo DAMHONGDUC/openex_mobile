@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:openex_mobile/config/network/dio/dio_client.dart';
+import 'package:openex_mobile/core/network/dio/dio_client.dart';
 
 class DioService {
   static Future<dynamic> get(String url) async {

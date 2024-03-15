@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:openex_mobile/config/network/dio/dio_service.dart';
+import 'package:openex_mobile/core/network/dio/dio_service.dart';
 import 'package:openex_mobile/data/models/user_model.dart';
 
 class AuthRepository {

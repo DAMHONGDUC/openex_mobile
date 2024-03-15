@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:openex_mobile/config/end_points.dart';
-import 'package:openex_mobile/config/network/interceptors/authorization_interceptor.dart';
-import 'package:openex_mobile/config/network/interceptors/logger_interceptor.dart';
+import 'package:openex_mobile/core/network/end_points.dart';
+import 'package:openex_mobile/core/network/interceptors/authorization_interceptor.dart';
+import 'package:openex_mobile/core/network/interceptors/logger_interceptor.dart';
 
 class DioClient {
   DioClient._();

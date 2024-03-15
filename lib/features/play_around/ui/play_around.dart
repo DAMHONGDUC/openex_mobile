@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:openex_mobile/blocs/language/language_cubit.dart';
-import 'package:openex_mobile/common/constants.dart';
-import 'package:openex_mobile/config/app_router.dart';
-import 'package:openex_mobile/config/end_points.dart';
+import 'package:openex_mobile/core/app_router.dart';
+import 'package:openex_mobile/core/common/app_constants.dart';
+import 'package:openex_mobile/core/network/end_points.dart';
+import 'package:openex_mobile/core/resources/app_colors.dart';
+import 'package:openex_mobile/core/resources/app_text_style.dart';
 import 'package:openex_mobile/data/repository/auth_repository.dart';
-import 'package:openex_mobile/resources/colors.dart';
-import 'package:openex_mobile/resources/text_style.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:openex_mobile/features/play_around/bloc/language_cubit.dart';
 import 'package:openex_mobile/utils/log/log.dart';
 
 class PlayAroundScreen extends StatefulWidget {
