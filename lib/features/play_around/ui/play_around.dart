@@ -7,7 +7,7 @@ import 'package:openex_mobile/core/common/app_enums.dart';
 import 'package:openex_mobile/core/resources/app_colors.dart';
 import 'package:openex_mobile/core/resources/app_text_style.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:openex_mobile/features/app/bloc/app_cubit.dart';
+import 'package:openex_mobile/features/app/cubit/app_cubit.dart';
 import 'package:openex_mobile/utils/toast_manager/toast_manager.dart';
 
 class PlayAroundScreen extends StatefulWidget {

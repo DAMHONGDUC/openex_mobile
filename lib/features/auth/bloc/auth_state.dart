@@ -11,12 +11,4 @@ class AuthenticatedState extends AuthState {}
 
 class UnauthenticatedState extends AuthState {}
 
-class AuthError extends AuthState {
-  final String? message;
-  final Map<String, String>? errors;
-
-  AuthError(this.message, [Map<String, List<String>>? errs])
-      : errors = errs?.map(
-          (key, value) => MapEntry(key, value.first),
-        );
-}
+class LoadingAuthenticationState extends AuthState {}

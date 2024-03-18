@@ -7,7 +7,7 @@ import 'package:openex_mobile/core/common/app_constants.dart';
 import 'package:openex_mobile/core/themes/themes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:openex_mobile/data/repository/auth_repository.dart';
-import 'package:openex_mobile/features/app/bloc/app_cubit.dart';
+import 'package:openex_mobile/features/app/cubit/app_cubit.dart';
 import 'package:openex_mobile/features/auth/bloc/auth_bloc.dart';
 
 class App extends StatelessWidget {
@@ -62,6 +62,6 @@ class App extends StatelessWidget {
 
   BlocProvider<AppCubit> _configAppCubit() {
     return BlocProvider<AppCubit>(
-        create: (BuildContext context) => AppCubit()..loadLanguage());
+        create: (BuildContext context) => AppCubit()..initApp());
   }
 }
