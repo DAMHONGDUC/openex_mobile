@@ -5,7 +5,8 @@ import 'package:openex_mobile/core/resources/app_colors.dart';
 import 'package:openex_mobile/core/widgets/custom_toast.dart';
 
 class ToastManager {
-  static showNotificationToast(ToastType type, String? message) {
+  static showNotificationToast(ToastType type, String message,
+      {int duration = 2}) {
     Color backgroundColor;
     String title;
 
@@ -37,6 +38,7 @@ class ToastManager {
           backgroundColor: backgroundColor,
         );
       },
+      duration: Duration(seconds: duration),
     );
   }
 }

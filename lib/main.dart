@@ -21,14 +21,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AppCubit, AppState>(
-      builder: (context, state) {
+      builder: (context, appState) {
         return ScreenUtilInit(
           designSize: const Size(360, 690),
           minTextAdapt: true,
           child: MaterialApp(
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            locale: Locale(state.language.currentLang),
+            locale: Locale(appState.language.currentLang),
             builder: BotToastInit(),
             navigatorObservers: [BotToastNavigatorObserver()],
             title: AppConstants.APP_NAME,

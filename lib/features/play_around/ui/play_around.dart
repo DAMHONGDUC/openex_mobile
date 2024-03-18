@@ -44,8 +44,10 @@ class _PlayAroundScreenState extends State<PlayAroundScreen> {
     }
 
     void showMotionToast() {
-      ToastManager.showNotificationToast(ToastType.Error,
-          "Some thing went wrhing wenme thing went wrhing wentme thing went wrhing wentt wron");
+      ToastManager.showNotificationToast(
+        ToastType.Error,
+        "hello",
+      );
     }
 
     return SafeArea(
