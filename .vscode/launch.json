@@ -5,13 +5,13 @@
       "name": "Android",
       "request": "launch",
       "type": "dart",
-      "deviceId": "127.0.0.1:6555"
+      "deviceId": "emulator-5554"
     },
     {
       "name": "iPhone",
       "request": "launch",
       "type": "dart",
-      "deviceId": "59A29C39-0E26-49F0-A497-1E9D9A9478F1"
+      "deviceId": "380C0250-7AED-4E07-B156-E9E61F3F9CFC"
     },
     {
       "name": "iPad",
@@ -43,6 +43,10 @@
     {
       "name": "debug-iOS",
       "configurations": ["iPhone", "iPad"]
+    },
+     {
+      "name": "debug-all",
+      "configurations": ["Android", "iPhone"]
     },
   ]
 }

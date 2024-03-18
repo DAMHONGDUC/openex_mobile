@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:openex_mobile/core/common/app_enums.dart';
 import 'package:openex_mobile/core/resources/app_colors.dart';
 import 'package:openex_mobile/core/resources/app_text_style.dart';
 
 class CustomToast extends StatefulWidget {
   final CancelFunc cancelFunc;
-  final ToastType type;
+  final Color backgroundColor;
+  final String title;
   final String? message;
 
   const CustomToast(
-      {Key? key, required this.cancelFunc, required this.type, this.message})
+      {Key? key,
+      required this.cancelFunc,
+      required this.backgroundColor,
+      required this.title,
+      this.message})
       : super(key: key);
 
   @override
@@ -19,92 +23,67 @@ class CustomToast extends StatefulWidget {
 }
 
 class _CustomToastState extends State<CustomToast> {
-  bool loveMe = true;
-
-  String getToastTitle(ToastType type) {
-    switch (type) {
-      case ToastType.Success:
-        {
-          return "Success";
-        }
-      case ToastType.Error:
-        {
-          return "Error";
-        }
-      case ToastType.Waring:
-        {
-          return "Warning";
-        }
-      case ToastType.Info:
-        {
-          return "Info";
-        }
-      default:
-        {
-          return "Success";
-        }
-    }
-  }
-
-  Color getToastColor(ToastType type) {
-    switch (type) {
-      case ToastType.Success:
-        {
-          return AppColors.success;
-        }
-      case ToastType.Error:
-        {
-          return AppColors.error;
-        }
-      case ToastType.Waring:
-        {
-          return AppColors.black;
-        }
-      case ToastType.Info:
-        {
-          return AppColors.black;
-        }
-      default:
-        {
-          return AppColors.black;
-        }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    String toastTitle = getToastTitle(widget.type);
-    Color toastColor = getToastColor(widget.type);
-
     return Padding(
-      padding: EdgeInsets.all(10.sp),
-      child: Card(
-        color: toastColor,
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 10.sp,
-                  ),
-                  Text(
-                    "$toastTitle: ",
-                    style: AppTextStyle.medium().withColor(AppColors.white),
-                  ),
-                  Text(
-                    widget.message ?? "",
-                    style: AppTextStyle.medium().withColor(AppColors.white),
-                  ),
-                ],
+      padding: EdgeInsets.all(8.sp),
+      child: SizedBox(
+        height: 64.sp,
+        child: Card(
+          color: AppColors.white,
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: Row(
+                  children: [
+                    Container(
+                      height: double.infinity,
+                      width: 5.w,
+                      decoration: BoxDecoration(
+                          color: widget.backgroundColor,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10.h),
+                              bottomLeft: Radius.circular(10.h))),
+                    ),
+                    SizedBox(
+                      width: 10.w,
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.all(6.sp),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              widget.title,
+                              style: AppTextStyle.base()
+                                  .withColor(AppColors.black)
+                                  .withColor(widget.backgroundColor),
+                            ),
+                            Text(
+                              widget.message ?? "",
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                              style: AppTextStyle.small()
+                                  .withColor(AppColors.black),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
-            ),
-            IconButton(
-              icon: const Icon(Icons.cancel),
-              color: loveMe ? Colors.redAccent : Colors.grey,
-              onPressed: widget.cancelFunc,
-            )
-          ],
+              IconButton(
+                icon: Icon(
+                  Icons.close,
+                  size: 16.sp,
+                ),
+                onPressed: widget.cancelFunc,
+              )
+            ],
+          ),
         ),
       ),
     );

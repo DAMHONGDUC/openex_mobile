@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
     return BlocBuilder<AppCubit, AppState>(
       builder: (context, state) {
         return ScreenUtilInit(
+          designSize: const Size(360, 690),
           minTextAdapt: true,
           child: MaterialApp(
             localizationsDelegates: AppLocalizations.localizationsDelegates,

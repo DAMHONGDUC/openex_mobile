@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:openex_mobile/core/app_router.dart';
 import 'package:openex_mobile/core/common/app_constants.dart';
 import 'package:openex_mobile/core/common/app_enums.dart';
@@ -34,7 +35,7 @@ class _PlayAroundScreenState extends State<PlayAroundScreen> {
       final AuthRepository authRepository = AuthRepository();
 
       final resp =
-          // await authRepository.login(Endpoints.LOGIN, "kminchelle", "0lelplR");
+          //    await authRepository.login(Endpoints.LOGIN, "kminchelle", "0lelplR");
           await authRepository.login(Endpoints.LOGIN, "kminchellee", "0lelplR");
 
       setState(() {
@@ -43,8 +44,8 @@ class _PlayAroundScreenState extends State<PlayAroundScreen> {
     }
 
     void showMotionToast() {
-      ToastManager.showNotificationToast(
-          ToastType.Error, "Some thing went wrong");
+      ToastManager.showNotificationToast(ToastType.Error,
+          "Some thing went wrhing wenme thing went wrhing wentme thing went wrhing wentt wron");
     }
 
     return SafeArea(
@@ -60,20 +61,43 @@ class _PlayAroundScreenState extends State<PlayAroundScreen> {
                 padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
-                    Text(AppLocalizations.of(context)!.helloWorld),
+                    Text(
+                      AppLocalizations.of(context)!.helloWorld,
+                      style: AppTextStyle.base().withColor(AppColors.black),
+                    ),
+                    SizedBox(height: 10.h),
                     ElevatedButton(
                         onPressed: () => {changeLanguage(LanguageCode.EN)},
-                        child: const Text("Change app language to English")),
+                        child: Text(
+                          "Change app language to English",
+                          style: AppTextStyle.base().withColor(AppColors.black),
+                        )),
+                    SizedBox(height: 10.h),
                     ElevatedButton(
                         onPressed: () => {changeLanguage(LanguageCode.JA)},
-                        child: const Text("Change app language to Japan")),
+                        child: Text(
+                          "Change app language to Japan",
+                          style: AppTextStyle.base().withColor(AppColors.black),
+                        )),
+                    SizedBox(height: 10.h),
                     ElevatedButton(
                         onPressed: () => {testCallAPI()},
-                        child: const Text("Test Call API")),
+                        child: Text(
+                          "Test Call API",
+                          style: AppTextStyle.base().withColor(AppColors.black),
+                        )),
+                    SizedBox(height: 10.h),
                     ElevatedButton(
                         onPressed: () => {showMotionToast()},
-                        child: const Text("Show Toast")),
-                    Text("User Email:$userEmail")
+                        child: Text(
+                          "Show Toast",
+                          style: AppTextStyle.base().withColor(AppColors.black),
+                        )),
+                    SizedBox(height: 10.h),
+                    Text(
+                      "User Email:$userEmail",
+                      style: AppTextStyle.base().withColor(AppColors.black),
+                    )
                   ],
                 ),
               ),
