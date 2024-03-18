@@ -1,5 +1,5 @@
-import 'package:openex_mobile/features/auth/ui/login_screen.dart';
-import 'package:openex_mobile/features/landing/ui/landing_screen.dart';
+import 'package:openex_mobile/features/login/ui/login_screen.dart';
+import 'package:openex_mobile/features/app/ui/landing_screen.dart';
 import 'package:openex_mobile/features/play_around/ui/play_around.dart';
 
 class AppRoute {

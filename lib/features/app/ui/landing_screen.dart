@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:openex_mobile/core/widgets/loading_indicator.dart';
 import 'package:openex_mobile/features/auth/bloc/auth_bloc.dart';
-import 'package:openex_mobile/features/auth/ui/login_screen.dart';
+import 'package:openex_mobile/features/login/ui/login_screen.dart';
 import 'package:openex_mobile/features/play_around/ui/play_around.dart';
 
 class LandingScreen extends StatelessWidget {
