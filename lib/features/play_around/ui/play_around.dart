@@ -4,13 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:openex_mobile/core/app_router.dart';
 import 'package:openex_mobile/core/common/app_constants.dart';
 import 'package:openex_mobile/core/common/app_enums.dart';
-import 'package:openex_mobile/core/network/end_points.dart';
 import 'package:openex_mobile/core/resources/app_colors.dart';
 import 'package:openex_mobile/core/resources/app_text_style.dart';
-import 'package:openex_mobile/data/repository/auth_repository.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:openex_mobile/features/app/bloc/app_cubit.dart';
-import 'package:openex_mobile/utils/log/log.dart';
 import 'package:openex_mobile/utils/toast_manager/toast_manager.dart';
 
 class PlayAroundScreen extends StatefulWidget {
@@ -31,16 +28,16 @@ class _PlayAroundScreenState extends State<PlayAroundScreen> {
     }
 
     void testCallAPI() async {
-      Log.d("test call API");
-      final AuthRepository authRepository = AuthRepository();
+      // Log.d("test call API");
+      // final AuthRepository authRepository = AuthRepository();
 
-      final resp =
-          //    await authRepository.login(Endpoints.LOGIN, "kminchelle", "0lelplR");
-          await authRepository.login(Endpoints.LOGIN, "kminchellee", "0lelplR");
+      // final resp =
+      //     //    await authRepository.login(Endpoints.LOGIN, "kminchelle", "0lelplR");
+      //     await authRepository.login(Endpoints.LOGIN, "kminchellee", "0lelplR");
 
-      setState(() {
-        userEmail = resp?.email ?? 'null';
-      });
+      // setState(() {
+      //   userEmail = resp?.email ?? 'null';
+      // });
     }
 
     void showMotionToast() {

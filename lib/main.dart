@@ -6,13 +6,27 @@ import 'package:openex_mobile/core/app_router.dart';
 import 'package:openex_mobile/core/common/app_constants.dart';
 import 'package:openex_mobile/core/themes/themes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:openex_mobile/data/repository/auth_repository.dart';
 import 'package:openex_mobile/features/app/bloc/app_cubit.dart';
+import 'package:openex_mobile/features/auth/bloc/auth_bloc.dart';
 
 void main() {
-  runApp(MultiBlocProvider(providers: <BlocProvider<dynamic>>[
-    BlocProvider<AppCubit>(
-        create: (BuildContext context) => AppCubit()..loadLanguage())
-  ], child: const MyApp()));
+  runApp(MultiRepositoryProvider(
+    providers: [
+      RepositoryProvider<AuthRepository>(
+        create: (context) => AuthRepository(),
+        lazy: true,
+      )
+    ],
+    child: MultiBlocProvider(providers: <BlocProvider<dynamic>>[
+      BlocProvider<AppCubit>(
+          create: (BuildContext context) => AppCubit()..loadLanguage()),
+      BlocProvider<AuthBloc>(
+          create: (BuildContext context) => AuthBloc(
+              UninitAuthState(), RepositoryProvider.of<AuthRepository>(context))
+            ..add(AuthStartedEvent()))
+    ], child: const MyApp()),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -33,7 +47,7 @@ class MyApp extends StatelessWidget {
             navigatorObservers: [BotToastNavigatorObserver()],
             title: AppConstants.APP_NAME,
             theme: lightTheme,
-            initialRoute: AppRoute.PLAY_AROUND,
+            initialRoute: AppRoute.APP,
             routes: appRoutes,
             debugShowCheckedModeBanner: false,
           ),
