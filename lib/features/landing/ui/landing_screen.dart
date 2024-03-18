@@ -7,22 +7,21 @@ import 'package:openex_mobile/features/auth/ui/login_screen.dart';
 import 'package:openex_mobile/features/play_around/ui/play_around.dart';
 import 'package:openex_mobile/utils/log/log.dart';
 
-class App extends StatefulWidget {
-  const App({super.key});
+class LandingScreen extends StatefulWidget {
+  const LandingScreen({super.key});
 
   @override
-  State<App> createState() => _AppState();
+  State<LandingScreen> createState() => _LandingScreenState();
 }
 
-class _AppState extends State<App> {
+class _LandingScreenState extends State<LandingScreen> {
   final _bloc = AuthBloc(UninitAuthState(), AuthRepository());
 
   @override
   Widget build(BuildContext context) {
-    Log.d("build app");
     return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) =>
-          debugPrint("[LANDING PAGE] Receiving event: $state"),
+          Log.d("[LANDING PAGE] Receiving event: $state"),
       builder: (context, state) {
         Log.d(state);
         if (state is AuthenticatedState) {

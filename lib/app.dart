@@ -33,7 +33,7 @@ class App extends StatelessWidget {
                     navigatorObservers: [BotToastNavigatorObserver()],
                     title: AppConstants.APP_NAME,
                     theme: lightTheme,
-                    initialRoute: AppRoute.APP,
+                    initialRoute: AppRoute.LANDING,
                     routes: appRoutes,
                     debugShowCheckedModeBanner: false,
                   );
